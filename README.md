@@ -4,6 +4,7 @@ Story Gear, admin style with a C Sharp server! Uses all the CRUD mentods.
 ## Start-Up
 To start this Story Gear app up simply run the command: 
 - dotnet run 
+
 in the root of the project.
 
 ## CREATE
