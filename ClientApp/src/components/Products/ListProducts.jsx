@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 function ListProducts({product}) {
-  const { title, image, alt, price, description } = product
+  const { id, title, image, alt, price, description } = product
+
+  // DELETE a product by id
+  const deleteProducts = (id) => {
+    axios.delete('/api/products/'+ id)
+     .then(response => console.log(response.data.id));
+    };
+    // deleteProducts(id);
+
     return (
       // this component places the data into its respective postion based on its value
       <div className="box desktop">
@@ -15,7 +23,7 @@ function ListProducts({product}) {
           <p className="description">{description}</p>
           <div className="change-product">
             <Link className="edit" to="/edit-product">Edit</Link>
-            <div className="delete">Delete</div>
+            <div className="delete" onClick={() => {deleteProducts(id)}}>Delete</div>
           </div>
         </div>
       </div>

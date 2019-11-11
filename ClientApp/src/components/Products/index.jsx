@@ -2,6 +2,7 @@ import React from 'react';
 import ListProducts from './ListProducts';
 import {withRouter} from 'react-router-dom';
 import './index.css';
+import axios from 'axios';
 
 class Products extends React.Component {
   state = {
@@ -18,7 +19,7 @@ class Products extends React.Component {
   fetchContent() {
     const {type, price} = this.state;
     let dataURL = '/api/products';
-    console.log(dataURL);
+    // console.log(dataURL);
 
     // depending on the type or price that the client chooses, it will affect the outcome of the if else statement
     // if (type) {
@@ -50,37 +51,38 @@ class Products extends React.Component {
   // finish commenting this one!
   componentDidMount() {
     //how does this work if it isnt using fetchContent?
-    const {type, price} = this.props.match.params;
-    // console.log(this.props.match.params)
-    this.setState({
-      type: type,
-      price: price
-    });
-    // this.fetchContent()
+    // const {type, price} = this.props.match.params;
+    // // console.log(this.props.match.params)
+    // this.setState({
+    //   type: type,
+    //   price: price
+    // });
+    this.fetchContent()
   };
 
   // once the user changes the filter, the if statement below will compare the previous state to the present, therefore determining if it will go and fetch the data again using a different api address
-  componentDidUpdate(oldProps, oldState) {
-    console.log('componentDidUpdate', this.state, oldState)
-    if (this.state.type !== oldState.type || this.state.price !== oldState.price) {
-      this.fetchContent()
-      // make an if for price and category if they changed in state by comparing using prev.props
-    };
-  };
+  // componentDidUpdate(oldProps, oldState) {
+  //   console.log('componentDidUpdate', this.state, oldState)
+  //   if (this.state.type !== oldState.type || this.state.price !== oldState.price) {
+  //     this.fetchContent()
+  //     // make an if for price and category if they changed in state by comparing using prev.props
+  //   };
+  // };
 
   // changes state when this filter is changed for product type
-  handleProductChange = (e) => {
-    this.setState({
-      type: this.type.current.value
-    });
-  };
+  // handleProductChange = (e) => {
+  //   this.setState({
+  //     type: this.type.current.value
+  //   });
+  // };
 
-  // changes state when this filter is changed for price
-  handlePriceChange = (e) => {
-    this.setState({
-      price: this.price.current.value
-    });
-  };
+  // // changes state when this filter is changed for price
+  // handlePriceChange = (e) => {
+  //   this.setState({
+  //     price: this.price.current.value
+  //   });
+  // };
+
 
 
   render() {
@@ -93,6 +95,7 @@ class Products extends React.Component {
       if (productResults !== null) {
         mapProducts = productResults.map(( {
           // value: renamedToSomethingElse/Alias
+            id: id,
             product_name: title,
             product_image: image,
             product_alt_desc: alt,
@@ -101,7 +104,7 @@ class Products extends React.Component {
           }) => {
             // pass this data through to the ListProducts, where it will be placed in the proper html structure using destructuring
             return <ListProducts 
-            product={{title, image, alt, description, price}}
+            product={{ id, title, image, alt, description, price}} 
             />
           });
         };
