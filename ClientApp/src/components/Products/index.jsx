@@ -45,7 +45,6 @@ class Products extends React.Component {
         // sets state to all the items that were brought back
       });
     });
-
   };
 
   // finish commenting this one!

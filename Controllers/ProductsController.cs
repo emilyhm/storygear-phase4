@@ -86,6 +86,7 @@ namespace adminpage.Controllers
         }
 
         // DELETE: api/Products/5
+        [Route("api/products/delete/{id}")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Products>> DeleteProducts(int id)
         {

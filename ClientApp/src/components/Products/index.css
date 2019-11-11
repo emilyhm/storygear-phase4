@@ -17,9 +17,10 @@ img.prodImg {
     width: 100px;
 }
 .prodTitle {
-    color: white;
+    color: black;
     text-align: center;
-    font-family: 'Fascinate', cursive;
+    
+    font-family: "Courier New", Courier, monospace;
     font-size: 20px;
 }
 p.price {

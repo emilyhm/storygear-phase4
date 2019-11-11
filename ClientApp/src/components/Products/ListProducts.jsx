@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function ListProducts({product}) {
   const { title, image, alt, price, description } = product
     return (
@@ -13,7 +14,7 @@ function ListProducts({product}) {
           <p className="price">${price}</p>
           <p className="description">{description}</p>
           <div className="change-product">
-            <div className="edit">Edit</div>
+            <Link className="edit" to="/edit-product">Edit</Link>
             <div className="delete">Delete</div>
           </div>
         </div>
