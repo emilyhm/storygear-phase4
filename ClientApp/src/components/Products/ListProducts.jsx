@@ -22,7 +22,7 @@ function ListProducts({product}) {
           <p className="price">${price}</p>
           <p className="description">{description}</p>
           <div className="change-product">
-            <Link className="edit" to="/edit-product">Edit</Link>
+            <Link className="edit" to={"/edit-product/" + id}>Edit</Link>
             <div className="delete" onClick={() => {deleteProducts(id)}}>Delete</div>
           </div>
         </div>

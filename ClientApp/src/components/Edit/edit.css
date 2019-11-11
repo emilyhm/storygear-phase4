@@ -1,0 +1,10 @@
+.edit-input {
+    border: 1px solid goldenrod;
+    width: 700px;
+    height: 50px;
+}
+
+.edit-submit {
+    background-color: black;
+    color: white;
+}

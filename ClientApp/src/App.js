@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import Index from './components/Products/index';
 import Create from './components/Create/create-product';
-import Edit from './components/edit-product';
+import Edit from './components/Edit/edit-product';
 
 import './custom.css'
 

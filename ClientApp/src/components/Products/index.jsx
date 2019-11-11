@@ -2,7 +2,6 @@ import React from 'react';
 import ListProducts from './ListProducts';
 import {withRouter} from 'react-router-dom';
 import './index.css';
-import axios from 'axios';
 
 class Products extends React.Component {
   state = {

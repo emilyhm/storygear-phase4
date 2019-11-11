@@ -58,7 +58,7 @@ class Create extends Component {
                 <div>
                     Product Name:
                     <br/>
-                    <input type="text" name="product_name" value={this.state.product_name} onChange={this.onChange}/>
+                    <input className="create-input" type="text" name="product_name" value={this.state.product_name} onChange={this.onChange}/>
                 </div>
 
                 <br/>
@@ -66,7 +66,7 @@ class Create extends Component {
                 <div>
                     Product Image Link:
                     <br/>
-                    <input type="text" name="product_image" value={this.state.product_image} onChange={this.onChange}/>
+                    <input className="create-input" type="text" name="product_image" value={this.state.product_image} onChange={this.onChange}/>
                 </div>
 
                 <br/>
@@ -74,7 +74,7 @@ class Create extends Component {
                 <div> 
                     Product Category:
                     <br/>
-                    <input type="text" name="category" value={this.state.category} onChange={this.onChange}/>
+                    <input className="create-input" type="text" name="category" value={this.state.category} onChange={this.onChange}/>
                 </div>
 
                 <br/>
@@ -82,12 +82,12 @@ class Create extends Component {
                 <div>
                     Product Description:
                     <br/>
-                    <input type="text" name="item_description" value={this.state.item_description} onChange={this.onChange}/>
+                    <input className="create-input" type="text" name="item_description" value={this.state.item_description} onChange={this.onChange}/>
                 </div>
 
                 <br/>
 
-                <button className="submit">Submit</button>
+                <button className="create-submit">Submit</button>
             </form>
         );
     };
